@@ -13,50 +13,25 @@ body {
   background-color: #000000;
 }
 
-#container {
+.container {
   position: relative;
   width:507px; height:507px;
 }
 
-#container * {
+.container * {
   position: absolute;
 }
 
-.errorMessage {
-  border: 1px solid #dFb5b4;
-  background: #fcf2f2;
-  color: #c7254e;
-  padding: 0.5em;
-  border-radius: 5px;
-}
 </style>
 
 
 
 </head>
 <body>
-<div bgcolor="#FFFFFF">
-<p>
-  Drag points around to distort image.
-  <input type="checkbox" checked="1" id="drawControlPoints"></input>
-  <label for="drawControlPoints">Draw control points.</label>
-  <input type="checkbox" checked="1" id="anisotropicFiltering"></input>
-  <label for="anisotropicFiltering">Anisotropic filtering.</label>
-  <input type="checkbox" checked="1" id="mipMapping"></input>
-  <label for="mipMapping">MIP mapping.</label>
-  <input type="checkbox" checked="1" id="linearFiltering"></input>
-  <label for="linearFiltering">(Bi-/Tri-)linear filtering.</label>
-  <button id="saveResult">Download as PNG</button>
-</p>
+<div id="container" class="container">
 </div>
 
-<div id="container">
-  <!-- If background and/or screen image are not hosted on the
-  same domain as this page, the host must support CORS. -->
-  <!--<img id="screen" src="http://i.imgur.com/vsZypFu.png"> -->
-  <img id="screen" src="b5xhG.png">
-  <canvas width="507" height="1007" id="screenCanvas"></canvas>
-  <svg width="507" height="1007" id="controlHandles"></svg>
+<div id="container2" class="container">
 </div>
 
 <div id="video">
