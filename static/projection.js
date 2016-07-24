@@ -13,7 +13,7 @@ nextHighestPowerOfTwo = function(x) {
 
 function Projection(new_parent_div) {
     this.parent_div = new_parent_div;
-    this.init_image_url = "b5xhG.png";
+    this.init_image_url = "static/b5xhG.png";
 
     // The control points which represent the top-left, top-right and bottom
     // right of the image. These will be wires, via d3.js, to the handles
@@ -38,14 +38,14 @@ function Projection(new_parent_div) {
     // Reflect any changes in quality options
 
     this.screenCanvasElement = document.createElement('canvas');
-    this.screenCanvasElement.width = 507;
-    this.screenCanvasElement.height = 507;
+    this.screenCanvasElement.width = window.innerWidth;
+    this.screenCanvasElement.height = window.innerHeight;
     this.parent_div.appendChild(this.screenCanvasElement);
 
     // Wire in the control handles to dragging. Call 'redrawImg' when they change.
     this.controlHandlesElement = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    this.controlHandlesElement.style.width = 507;
-    this.controlHandlesElement.style.height = 507;
+    this.controlHandlesElement.style.width = window.innerWidth;
+    this.controlHandlesElement.style.height = window.innerHeight;
     this.parent_div.appendChild(this.controlHandlesElement);
     this.setupControlHandles(this.controlHandlesElement, this.redrawImg.bind(this));
 
@@ -393,4 +393,3 @@ Projection.prototype.saveResult = function() {
 
 
 map1 = new Projection(document.getElementById('container'));
-map2 = new Projection(document.getElementById('container2'));
